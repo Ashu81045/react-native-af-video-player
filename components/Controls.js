@@ -161,6 +161,7 @@ class Controls extends Component {
 							progress={progress}
 							onSeek={(val) => this.props.onSeek(val)}
 							currentTime={this.props.currentTime}
+							duration={this.props.duration}
 						/>
 					</Animated.View>
 					<ControlBar

@@ -23,7 +23,10 @@ const PlayButton = (props) => (
 	<View style={styles.playContainer}>
 		<TouchableOpacity
 			style={{ marginHorizontal: 40 }}
-			onPress={(val) => props.onSeekRelease(val)}
+			onPress={() =>{
+				let percent = (props.currentTime - 10)/props.duration;
+				props.onSeekRelease(percent)}
+			}
 		>
 			<Icons
 				style={styles.playButton}
@@ -42,7 +45,10 @@ const PlayButton = (props) => (
 		</TouchableOpacity>
 		<TouchableOpacity
 			style={{ marginHorizontal: 40 }}
-			onPress={(val) => props.onSeek(val)}
+			onPress={() =>{
+				let percent = (props.currentTime + 10)/props.duration;
+				props.onSeekRelease(percent)}
+			}
 		>
 			<Icons
 				style={styles.playButton}
